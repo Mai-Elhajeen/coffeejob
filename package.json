@@ -1,0 +1,25 @@
+{
+  "name": "coffeejob",
+  "version": "1.0.0",
+  "description": "using node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mai-Elhajeen/coffeejob.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mai-Elhajeen/coffeejob/issues"
+  },
+  "homepage": "https://github.com/Mai-Elhajeen/coffeejob#readme",
+  "keywords": [],
+  "dependencies": {
+    "eslint": "^8.33.0",
+    "nodemon": "^2.0.20"
+  }
+}

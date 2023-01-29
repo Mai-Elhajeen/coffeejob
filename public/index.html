@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ********************* CSS Links ********************* -->
+    <link rel="stylesheet" href="../public/main.css">
+    <link rel="shortcut icon" href="../public/img/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>CoffeeJob | Home</title>
+</head>
+<body>
+    <!-- ********************* loading page ********************* -->
+    <div class="preloader">
+        <div class="dot dot1"></div>
+        <div class="dot dot2"></div>
+        <div class="dot dot3"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <img class="logo" src="../public/img/logo5.png" alt="logo">
+            <div class="navbar-menu">
+                <i class="ri-close-fill close-icon" id="close"></i>
+                <a href="#header" class="nav-link">Home</a>
+                <a href="#results-section" class="nav-link">Jobs</a>
+                <a href="#" class="nav-link">Testimonial</a>
+                <a href="#footer" class="nav-link">Sign In</a>
+            </div>
+            <div class="menu-toggle" id="show">
+                <i class="ri-menu-3-line menu-icon"></i>
+            </div>
+        </nav>
+
+        <section class="home-page">
+            <h1 class="header-title">Find The Job<br> <span>That Suits You</span> <br> At Coffejob </h1>
+        </section>
+
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <!-- Results Section -->
+        <section class="results-section" id="results-section">
+            <div class="search-wrapper">
+                <div class="search-box">
+                    <div class="search-card">
+                        <div class="search-suggestion">
+                            <input class="search-input" id="search" type="text" name="job-title" placeholder="Job Title or Keyword">
+                            <div id="suggestions-section">
+                                <!-- ! list inserted with suggestions -->
+                            </div>
+                        </div>
+                        <button class="search-btn" >Search</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="error-not-found">NO RESULTS FOUND</div>
+        <section class="results">
+            <div class="preloader2" >
+                <div class="dot dot1"></div>
+                <div class="dot dot2"></div>
+                <div class="dot dot3"></div>
+            </div>    
+            <div class="jobs-container">
+                <div class="jobs-list">
+                </div>
+                <div class="job-view">
+                    <div class="job-view-elements">
+                        <div class="view-details-container">
+                            <div class="view-companyimg-container">
+                                <img src="https://media.newjobs.com/clu/xnbs/xnbsx/branding/15946/Randstad-Technology-Group-logo-637599464206620401.png" alt="" class="view-company-img">
+                            </div>
+                            <div class="view-details">
+                                <p class="view-job-title">Software Developer</p>
+                                <p class="view-company-name">Google</p>
+                                <p class="view-company-location">AUSTIN, TX 7811</p>
+                            </div>
+                            <a href="#" class="btn view-apply" target="_blank">Apply <svg role="img" width="16" height="16" viewBox="0 0 24 16" fill="#FFFFFF"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"></path></svg></a>
+                        </div>
+                        <hr class="line"> 
+                        <div class="view-additional-details">
+                            <h1 class="details-title">Details:</h1>
+                            <hr class="detail-line"> 
+                            <div class="job-type">Salary: &nbsp; <span id = "salary">21227 &pound;</span></div>
+                            <hr class="detail-line"> 
+                            <div class="job-type">Location:  &nbsp;  <span id = "full-location">UK England Rockstar City</span></div>
+                            <hr class="detail-line"> 
+                            <div class="job-type">Contract Type:   &nbsp; <span id = "contract-type"></span> <span id = "job-time"></span></div>
+                            <hr class="detail-line"> 
+                            <h1 class="details-title">Description:</h1>
+                            <div class="view-job-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum velit libero voluptas, mollitia corporis perferendis, perspiciatis iure quo suscipit est sit natus? Consequuntur exercitationem est ad unde, praesentium laudantium suscipit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque ducimus vitae repudiandae praesentium reiciendis commodi eligendi, minima provident ex vero quasi numquam tenetur. Voluptas optio labore quo voluptatum asperiores quos?</div>
+            
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <h3>CoffeeJob</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni inventore sapiente pariatur suscipit neque repudiandae commodi, soluta quasi cumque corporis voluptate quidem consequatur maiores illum, quia quod eos tempora porro.
+            </p>
+            <div class="social-media">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-youtube-fill"></i></a>
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+                <a href="#"><i class="ri-linkedin-fill"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <h4>Explore</h4>
+            <a href="#">Top Jobs</a>
+            <a href="#">Terms and Serves</a>
+            <a href="#">Podcast</a>
+            <a href="#">Careers</a>
+        </div>
+
+        <div class="footer-content">
+            <h4>About</h4>
+            <a href="#">F&Q</a>
+            <a href="#">Get Inspired</a>
+            <a href="#">Blog</a>
+        </div>
+
+        <div class="footer-content">
+            <h4>Support</h4>
+            <a href="#">Customer</a>
+            <a href="#">Trust & Safety</a>
+            <a href="#">Partnership</a>
+        </div>
+
+        <div class="footer-content">
+            <h4>Community</h4>
+            <a href="#">Community</a>
+            <a href="#">Invest & Friend</a>
+            <a href="#">Event</a>
+        </div>
+    </footer>
+
+    <!-- ********************* copyright ********************* -->
+    <p class="copy-right">
+        &#169;2020 all right reserved | coding with &#x2764; by Mai & Abdallah.
+    </p>
+
+    <!-- ********************* scroll up ********************* -->
+    <a href="#" class="scroll-up" id="scroll-up">
+        <i class="ri-arrow-up-line scroll-up-icon"></i>
+    </a>
+
+    <!-- ********************* JS Links ********************* -->
+    <script src="../public/main.js"></script>
+    <script src="../public/fetch.js"></script>
+    <script src="../public/DOM.js"></script>
+
+</body>
+</html>
