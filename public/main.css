@@ -120,7 +120,15 @@ h1 {
     cursor: pointer;
     color: var(--white-color);
 }
-
+h1.logo-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1.logo-name img{
+    width: 50px;
+    height: 50px;
+}
 .navbar-menu {
     width: 400px;
     display: flex;
@@ -239,7 +247,7 @@ h1 {
 }
 
 #suggestions-section li:hover {
-    background: var(--white-color);
+    background: var(--label-color);
 }
 
 /* ? ********************* start footer section ********************* */
@@ -631,6 +639,9 @@ h1 {
 
     .header .header-title {
         font-size: 28px;
+    }
+    .navbar {
+        padding: 1rem;
     }
 
     /* ? ********************* start result find job ********************* */

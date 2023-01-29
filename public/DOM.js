@@ -1,8 +1,7 @@
-
+// ? declare variables
 const suggestionsDiv = document.querySelector("#suggestions-section");
 const searchButton = document.querySelector(".search-btn");
 const searchInput = document.querySelector("#search");
-
 
 const jobContainer = document.querySelectorAll('.job');
 const jobsList = document.querySelector(".jobs-list");
@@ -13,7 +12,6 @@ const loader2 = document.querySelector('.preloader2');
 const notFound = document.querySelector('.error-not-found');
 
 /* Auto Complete */ 
-
 const renderData = (data) => {
     suggestionsDiv.textContent = "";
     const ul = document.createElement('ul');
@@ -31,18 +29,12 @@ const renderData = (data) => {
 
 searchInput.addEventListener('input', () => {
     suggestionsDiv.style.display = 'block'
-    fetchPost('/suggestions', renderData);
+    postFetch('/suggestions', renderData);
 })
 
-
-
-
 /* API SECTION */
-
 const renderJobs = (data) => {
-    
     data.results.forEach((element, index) => {
-        
         const jobDiv = document.createElement('div');
         jobDiv.classList.add('job');
 
@@ -72,14 +64,12 @@ const renderJobs = (data) => {
 
         companyImageContainerDiv.appendChild(companyImage);
         detailsContainerDiv.appendChild(companyImageContainerDiv);
-
         detailsDiv.appendChild(jobTitle);
         detailsDiv.appendChild(companyName);
         detailsDiv.appendChild(companyLocation);
         detailsContainerDiv.appendChild(detailsDiv);
 
         // second div 
-
         const descriptionContainer = document.createElement('div'); 
         const jobDescription = document.createElement('p'); 
         const jobDatesApply = document.createElement('div'); 
@@ -99,19 +89,14 @@ const renderJobs = (data) => {
         jobApply.textContent = 'Apply';
         jobApply.href = element.redirect_url;
 
-
-
         descriptionContainer.appendChild(jobDescription);
-
         jobDatesApply.appendChild(jobDate);
         jobDatesApply.appendChild(jobApply);
         descriptionContainer.appendChild(jobDatesApply);
-
-
         jobDiv.appendChild(detailsContainerDiv);
         jobDiv.appendChild(descriptionContainer);
         jobsList.append(jobDiv);
-    
+
         jobDiv.addEventListener('click', (event) => {
             const allJobsDivs = document.getElementsByName('jobs');
             renderJobDetails(data, index);
@@ -123,13 +108,11 @@ const renderJobs = (data) => {
                 jobsViewElements.classList.remove('slow-animation');
             }, 600);
 
-
             allJobsDivs.forEach((element, index2) => {
                 if (index2 !== index) {
                     element.style.backgroundColor = '#F4F4F5'; 
                 }
             })
-            
         })  
 
         if (index == 0) {
@@ -144,8 +127,6 @@ const renderJobs = (data) => {
                 jobsList.classList.remove('animation');
             }, 800);
         }
-     
-
     })
     jobsContainer.style.display = "flex";
     resultsContainer.style.display = 'block';
@@ -156,11 +137,9 @@ const renderJobs = (data) => {
         resultsContainer.style.display = 'none';
         notFound.style.display = 'flex';
     }
-
 }
 
 const renderJobDetails = (data, index) => {
-    
     const viewCompanyImage = document.querySelector('.view-company-img');
     const viewJobTitle = document.querySelector('.view-job-title')
     const viewCompanyName = document.querySelector('.view-company-name')
@@ -188,11 +167,10 @@ const renderJobDetails = (data, index) => {
     if (data.results[index].contract_time) {
         jobTime.textContent = data.results[index].contract_time.slice(0,1).toUpperCase() + data.results[index].contract_time.slice(1).replace('_', '-');
     }
-
 }
 
 const getDataFromApi = () => {
-    fetchGet(`https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=821b552f&app_key=2006c5cfad389d3b8ef9180f62b66a69&title_only=${searchInput.value}`, renderJobs)
+    getFetch(`https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=821b552f&app_key=2006c5cfad389d3b8ef9180f62b66a69&title_only=${searchInput.value}`, renderJobs)
     jobsList.textContent = '';
     loader2.style.display = "flex";
     suggestionsDiv.style.display = 'none'
@@ -201,7 +179,7 @@ const getDataFromApi = () => {
 searchButton.addEventListener('click', () => {
     getDataFromApi();
 });
-    
+
 searchInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         getDataFromApi();

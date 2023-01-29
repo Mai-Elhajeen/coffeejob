@@ -1,4 +1,4 @@
-const fetchPost = (url, cb)=>{
+const postFetch = (url, cb)=>{
     const xhr = new XMLHttpRequest();
     let searchParam = searchInput.value; 
 
@@ -15,7 +15,7 @@ const fetchPost = (url, cb)=>{
     xhr.send(`inputValue=${searchParam}`)
 }
 
-const fetchGet = (url, cb)=> {
+const getFetch = (url, cb)=> {
     const xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = () => {

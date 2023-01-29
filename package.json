@@ -19,7 +19,9 @@
   "homepage": "https://github.com/Mai-Elhajeen/coffeejob#readme",
   "keywords": [],
   "dependencies": {
-    "eslint": "^8.33.0",
     "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "eslint": "^8.33.0"
   }
 }

@@ -18,11 +18,8 @@ const router = (request, response) => {
                 response.end()
             }
         })
-
     } else if (endPoint.includes('public')) {
-
         const filePath = path.join(__dirname, "..", endPoint);
-
         fs.readFile(filePath, (error, data) => {
             if (error) {
                 response.writeHead(500, {'Content-Type' : mime.lookup('file.html')})
@@ -34,11 +31,8 @@ const router = (request, response) => {
                 response.end();
             }
         })
-
     } else if (endPoint === '/suggestions') {
-
         const filePathJobs = path.join(__dirname, "jobs.json");
-
         fs.readFile(filePathJobs, (error, data) => {
             if (error) {
                 response.writeHead(500, {'Content-Type' : mime.lookup('file.html')})
@@ -46,13 +40,10 @@ const router = (request, response) => {
                 response.end()
             } else {
                 const allJobsData = JSON.parse(data);
-
                 allData = ''; 
-
                 request.on('data', (chunks) => {
                     allData += chunks; 
                 })
-
                 request.on('end', () => {
                     const searchParams = new URLSearchParams(allData); 
                     const searchInput = searchParams.get("inputValue");
@@ -62,9 +53,8 @@ const router = (request, response) => {
                         return item.match(regex)
                     }).sort().reverse();
 
-                    const uniqueArrayofSuggestions = Array.from(new Set(arrayOfSuggestions));
-                    
-                    response.write(JSON.stringify(uniqueArrayofSuggestions))
+                    const uniqueArrayOfSuggestions = Array.from(new Set(arrayOfSuggestions));
+                    response.write(JSON.stringify(uniqueArrayOfSuggestions))
                     response.end();
                 })        
             }
@@ -72,7 +62,7 @@ const router = (request, response) => {
 
     } else {
         response.writeHead(404, {'Content-Type' : 'text/html'})
-        response.write('Page os Not Found ' + response.statusCode)
+        response.write('Page Not Found ' + response.statusCode)
         response.end()
     }
 }
